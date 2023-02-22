@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form id="form" action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-control">
+            {% for i in choices %}
+                {{ i.label }} <br>
+                {{ i() }}
+            {% endfor %}
+        </div>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
